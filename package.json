@@ -1,0 +1,55 @@
+{
+  "name": "loudness-check-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for audio loudness: measure LUFS, true peak and LRA, compare to YouTube/Spotify/podcast/broadcast targets, normalize with two-pass loudnorm, find silence, clipping and loud spikes.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "loudness-check-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('dist/index.js', 0o755)\"",
+    "start": "node dist/index.js",
+    "test": "node --test test/*.test.mjs",
+    "inspect": "npx -y @modelcontextprotocol/inspector node dist/index.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "loudness",
+    "lufs",
+    "ebu-r128",
+    "true-peak",
+    "ffmpeg",
+    "audio",
+    "podcast",
+    "creator-tools",
+    "claude"
+  ],
+  "author": "Anshuman",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anshumanofficial2002-cpu/loudness-check-mcp.git"
+  },
+  "homepage": "https://github.com/anshumanofficial2002-cpu/loudness-check-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/anshumanofficial2002-cpu/loudness-check-mcp/issues"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "typescript": "^5.9.3"
+  }
+}
